@@ -9,7 +9,6 @@ import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.Ndef;
 import android.util.Log;
-import com.idn.ducibus.MainActivity;
 
 import java.util.Observable;
 import java.util.Observer;
@@ -18,9 +17,9 @@ public class NfcReader extends Observable implements Observer {
     private static final String MIME_TEXT_PLAIN = "text/plain";
     private NfcAdapter nfcAdapter;
 
-    public NfcReader(MainActivity c) {
-        nfcAdapter = NfcAdapter.getDefaultAdapter(c);
-        this.addObserver(c);
+    public <T extends Observer> NfcReader(T activity) {
+        nfcAdapter = NfcAdapter.getDefaultAdapter((Context) activity);
+        this.addObserver(activity);
     }
 
     public boolean hasNfcSupport() {
@@ -88,9 +87,7 @@ public class NfcReader extends Observable implements Observer {
 
     @Override
     public void update(Observable observable, Object o) {
-        System.out.println("--------------------");
-        System.out.println(o);
-        setChanged();
+        this. setChanged();
         this.notifyObservers(o);
     }
 }

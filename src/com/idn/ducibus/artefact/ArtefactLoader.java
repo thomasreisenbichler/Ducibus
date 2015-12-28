@@ -1,5 +1,6 @@
 package com.idn.ducibus.artefact;
 
+import android.app.Activity;
 import android.graphics.BitmapFactory;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,9 +13,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 
 public class ArtefactLoader {
-    private MainActivity activity;
+    private Activity activity;
 
-    public ArtefactLoader(MainActivity activity) {
+    public ArtefactLoader(Activity activity) {
         this.activity = activity;
     }
 
