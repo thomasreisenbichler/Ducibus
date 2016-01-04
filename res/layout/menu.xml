@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:gravity="center_vertical|center_horizontal">
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent"
+                  android:layout_height="wrap_content" android:gravity="center_horizontal">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content">
+            <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                         android:id="@+id/imageButton" android:src="@drawable/navigation"
+                         android:background="#4bafafaf" android:layout_margin="3dp"
+                         android:layout_alignParentEnd="false" android:layout_alignParentTop="true"
+                         android:layout_alignParentLeft="true"/>
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="Tour"
+                      android:id="@+id/textView" android:textStyle="bold" android:gravity="center_horizontal"/>
+        </LinearLayout>
+        <Space
+                android:layout_width="30dp"
+                android:layout_height="20px"
+        />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                      android:layout_height="wrap_content">
+            <ImageButton android:layout_width="wrap_content" android:layout_height="wrap_content"
+                         android:id="@+id/imageButton2" android:src="@drawable/pointer" android:background="#4bafafaf"
+                         android:layout_margin="3dp" android:onClick="onClick"/>
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="Erkundung"
+                      android:id="@+id/textView5" android:textStyle="bold" android:gravity="center_horizontal"/>
+        </LinearLayout>
+    </LinearLayout>
+    <Space
+            android:layout_width="20px"
+            android:layout_height="30dp"
+    />
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" android:gravity="center_horizontal">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton3" android:src="@drawable/theatre"
+                    android:background="#4bafafaf" android:layout_margin="3dp"
+                    android:layout_alignParentEnd="false" android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"/>
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="Infos"
+                      android:id="@+id/textView3" android:textStyle="bold" android:gravity="center_horizontal"/>
+        </LinearLayout>
+        <Space android:layout_width="30dp" android:layout_height="20px"/>
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageButton4" android:src="@drawable/book" android:background="#4bafafaf"
+                    android:layout_margin="3dp"/>
+            <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+                      android:textAppearance="?android:attr/textAppearanceMedium" android:text="News"
+                      android:id="@+id/textView4" android:textStyle="bold" android:gravity="center_horizontal"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+

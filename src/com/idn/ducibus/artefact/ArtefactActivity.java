@@ -34,21 +34,11 @@ public class ArtefactActivity extends Activity implements Observer {
 
         InputStream imageIS = null;
         try {
-            imageIS = this.getAssets().open("data/nfc.jpg");
+            imageIS = this.getAssets().open("data/nfc.png");
         } catch (IOException e) {
             e.printStackTrace();
         }
         imageView.setImageBitmap(BitmapFactory.decodeStream(imageIS));
-
-
-        if (!nfcReader.hasNfcSupport()) {
-            Toast.makeText(this, "This device doesn't support NFC.", Toast.LENGTH_LONG).show();
-        }
-        if (!nfcReader.hasNfcEnabled()) {
-            artefactName.setText("NFC is disabled.");
-        } else {
-            artefactName.setText("SCAN TAG!");
-        }
 
         nfcReader.handleIntent(getIntent());
     }
