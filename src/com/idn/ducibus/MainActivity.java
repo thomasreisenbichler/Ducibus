@@ -79,7 +79,7 @@ public class MainActivity extends Activity implements Observer {
     }
 
     public void onClick(View v) {
-        Intent intent = new Intent(this, MenuActivity.class);
-        startActivity(intent);
+        Intent done = new Intent(MainActivity.this, MenuActivity.class);
+        startActivity(done);
     }
 }
