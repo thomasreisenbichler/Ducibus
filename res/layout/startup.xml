@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:gravity="center_horizontal">
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2" android:src="@drawable/logotextshort" android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_margin="20dp"/>
+    <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_gravity="center_vertical">
+        <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:gravity="center_horizontal">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Museum wählen:"
+                    android:id="@+id/textView2" android:layout_gravity="center_horizontal"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:gravity="center_horizontal">
+            <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/spinner" android:layout_marginRight="25dp" android:layout_marginLeft="25dp"
+            />
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:gravity="center_horizontal">
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ok"
+                    android:id="@+id/button" android:layout_marginLeft="25dp" android:layout_marginRight="25dp"
+                    android:onClick="onClick"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
+

@@ -1,47 +1,32 @@
-package com.idn.ducibus;
+package com.idn.ducibus.menu;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.*;
+import com.idn.ducibus.R;
 import com.idn.ducibus.artefact.ArtefactActivity;
 import com.idn.ducibus.artefact.ArtefactDescriptor;
 import com.idn.ducibus.artefact.ArtefactLoader;
-import com.idn.ducibus.menu.MenuActivity;
 import com.idn.ducibus.nfc.NfcReader;
 
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
-public class MainActivity extends Activity implements Observer {
+public class MenuActivity extends Activity implements Observer {
     private NfcReader nfcReader;
     private ArtefactLoader artefactLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.startup);
+        setContentView(R.layout.menu);
         setTitle("Ducibus");
-
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.museums, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
 
         nfcReader = new NfcReader(this);
         artefactLoader = new ArtefactLoader(this);
-
-        if (!nfcReader.hasNfcSupport()) {
-            Toast.makeText(this, "This device doesn't support NFC.", Toast.LENGTH_LONG).show();
-        }
-        if (!nfcReader.hasNfcEnabled()) {
-            Toast.makeText(this, "\"NFC is disabled.", Toast.LENGTH_LONG).show();
-        }
-
-        nfcReader.handleIntent(getIntent());
     }
 
     @Override
@@ -60,7 +45,7 @@ public class MainActivity extends Activity implements Observer {
     protected void onNewIntent(Intent intent) {
         String[] list = new String[0];
         try {
-            list = MainActivity.this.getAssets().list("data/Schlossmuseum/1");
+            list = MenuActivity.this.getAssets().list("data/Schlossmuseum/1");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -79,7 +64,7 @@ public class MainActivity extends Activity implements Observer {
     }
 
     public void onClick(View v) {
-        Intent done = new Intent(MainActivity.this, MenuActivity.class);
-        startActivity(done);
+        Intent intent = new Intent(this, ArtefactActivity.class);
+        startActivity(intent);
     }
 }

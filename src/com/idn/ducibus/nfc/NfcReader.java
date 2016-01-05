@@ -87,7 +87,7 @@ public class NfcReader extends Observable implements Observer {
 
     @Override
     public void update(Observable observable, Object o) {
-        this. setChanged();
+        this.setChanged();
         this.notifyObservers(o);
     }
 }

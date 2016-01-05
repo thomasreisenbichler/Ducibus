@@ -2,6 +2,7 @@ package com.idn.ducibus.artefact;
 
 import android.app.Activity;
 import android.graphics.BitmapFactory;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.idn.ducibus.MainActivity;
@@ -37,6 +38,7 @@ public class ArtefactLoader {
                 }
                 ((TextView) activity.findViewById(R.id.artefactName)).setText(title);
                 ((TextView) activity.findViewById(R.id.artefactDescription)).setText(description);
+                ((TextView) activity.findViewById(R.id.artefactDescription)).setMovementMethod(new ScrollingMovementMethod());
             } catch (Exception ex) {
             }
         } catch (IOException e) {
